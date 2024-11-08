@@ -23,19 +23,11 @@ public:
 
     bool isValidBST(TreeNode* root) {
         inorder(root);
-        set<int>st;
-        for(auto it:vec){
-            st.insert(it);
+        
+        for(int i=0;i<vec.size()-1;i++){
+            if(vec[i]>=vec[i+1])return false;
+            
         }
-         
-         if(st.size()!=vec.size())return false;
-         int i=0;
-         auto it=st.begin();
-         while(i<st.size()){
-            if(*it!=vec[i])return false;
-            it++;
-            i++;
-         }
-         return true;
+        return true;
     }
 };
